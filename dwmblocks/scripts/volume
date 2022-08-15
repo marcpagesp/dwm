@@ -3,7 +3,7 @@
 vol="$(pamixer --get-volume-human | sed 's/ *% *//g')"
 
 if [ "$vol" == "muted" ]; then
-	echo "ﱝ mut" && exit
+	echo "^c#ff79c6^ﱝ mut" && exit
 elif [ "$vol" -gt "70" ]; then
 	icon=""
 elif [ "$vol" -gt "30" ]; then
