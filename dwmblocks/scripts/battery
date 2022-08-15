@@ -1,0 +1,29 @@
+#!/bin/bash
+
+bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
+                       grep percentage |
+                       sed 's/ *percentage: *//g' |
+                       sed 's/ *% *//g'`
+
+state=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
+    grep state |
+    sed 's/ *state: *//'`
+
+if [ $state == "charging" -o $state == "fully-charged" -o $state == "unknown" ]; then
+    icon=""
+else
+    if [ "$bat" -gt "80" ] && [ "$bat" -le "100" ]; then
+	    icon=""
+    elif [ "$bat" -gt "60" ] && [ "$bat" -le "80" ]; then
+	    icon=""
+    elif [ "$bat" -gt "40" ] && [ "$bat" -le "60" ]; then
+	    icon=""
+    elif [ "$bat" -gt "20" ] && [ "$bat" -le "40" ]; then
+	    icon=""
+    else
+	    icon=""
+    fi
+fi
+
+echo "^c#50fa7b^$icon $bat%"
+

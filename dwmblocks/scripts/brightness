@@ -1,0 +1,5 @@
+#!/bin/bash
+
+(( br = $(brightnessctl get) * 100 / 255 ))
+
+echo "^c#8be9fd^ $br%"

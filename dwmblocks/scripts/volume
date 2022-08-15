@@ -1,0 +1,17 @@
+#!/bin/sh
+
+vol="$(pamixer --get-volume-human | sed 's/ *% *//g')"
+
+if [ "$vol" == "muted" ]; then
+	echo "ﱝ mut" && exit
+elif [ "$vol" -gt "70" ]; then
+	icon=""
+elif [ "$vol" -gt "30" ]; then
+	icon="墳"
+elif [ "$vol" -gt "0" ]; then
+	icon="奔"
+else
+        icon=" "
+fi
+
+echo "^c#ff79c6^$icon $vol%"
