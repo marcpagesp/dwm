@@ -11,7 +11,7 @@ elif [ "$vol" -gt "30" ]; then
 elif [ "$vol" -gt "0" ]; then
 	icon="奔"
 else
-        icon=" "
+        icon=""
 fi
 
 echo "^c#ff79c6^$icon $vol%"
