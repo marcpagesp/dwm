@@ -1245,6 +1245,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_4,                                  3)
 	TAGKEYS(                        XK_5,                                  4)
 	TAGKEYS(                        XK_6,                                  5)
+        { MODKEY, XK_F4, spawn, SHCMD("shutdown now") },
         { MODKEY, XK_e, spawn, SHCMD("thunar") },
         { MODKEY, XK_b, spawn, SHCMD("firefox") },
         { MODKEY, XK_s, spawn, SHCMD("scrot ~/Desktop/%Y-%m-%d-%T-screenshot.png") },
