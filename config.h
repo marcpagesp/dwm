@@ -681,7 +681,7 @@ static const Layout layouts[] = {
 	#if TILE_LAYOUT
 	{ " - tile",      tile },    /* first entry is default */
 	#endif
-	{ " - floating",      NULL }, /* no layout = floatin */
+	{ " - float",      NULL }, /* no layout = floatin */
 	#if MONOCLE_LAYOUT
 	{ " - full",      monocle },
 	#endif
