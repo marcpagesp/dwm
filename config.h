@@ -681,6 +681,7 @@ static const Layout layouts[] = {
 	#if TILE_LAYOUT
 	{ " - tile",      tile },    /* first entry is default */
 	#endif
+	{ " - floating",      NULL }, /* no layout = floatin */
 	#if MONOCLE_LAYOUT
 	{ " - full",      monocle },
 	#endif
@@ -1250,6 +1251,7 @@ static Key keys[] = {
         { MODKEY, XK_b, spawn, SHCMD("firefox") },
         { MODKEY, XK_s, spawn, SHCMD("scrot ~/Desktop/%Y-%m-%d-%T-screenshot.png") },
         { MODKEY|ShiftMask, XK_s, spawn, SHCMD("scrot -s ~/Desktop/%Y-%m-%d-%T-screenshot.png") },
+        { MODKEY, XK_g, spawn, SHCMD("gimp") },
         {0, XF86XK_AudioLowerVolume, spawn, SHCMD("pamixer -d 5 && pkill -RTMIN+2 dwmblocks")},
         {0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 5 && pkill -RTMIN+2 dwmblocks")},
         {0, XF86XK_AudioMute, spawn, SHCMD("pamixer -t && pkill -RTMIN+2 dwmblocks")},
